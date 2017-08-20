@@ -25,7 +25,6 @@
     "inquirer": "^3.2.2",
     "multi-progress": "^2.0.0",
     "puppeteer": "^0.9.0",
-    "yargs": "^8.0.2",
     "yargs-parser": "^7.0.0"
   },
   "devDependencies": {

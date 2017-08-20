@@ -8,7 +8,6 @@ const dateFormat = require('dateformat');
 const ProgressBars = require('multi-progress')(process.stderr);
 const options = require('yargs-parser')(process.argv.slice(2));
 
-
 const pdfOptions = {
   path: options.url || options.u || false,
   scale: options.scale || options.s || 1,
@@ -27,6 +26,10 @@ const pdfOptions = {
 
 function isHtml(filename) {
   return filename.includes('.html');
+}
+
+function isLocalFile() {
+  return !(pdfOptions.path && pdfOptions.path.match(/https?:\/\//g));
 }
 
 function createFilename({ filename }) {
@@ -52,7 +55,7 @@ function mergeOptions({ path, height }) {
 async function createPdf({ filename, browser }) {
   const filenamePdf = createFilename({ filename });
   const bar = ProgressBars.newBar(`[:bar] :percent ${filenamePdf}`, { total: 20 });
-  const url = pdfOptions.path.match(/https?:\/\//g) ? pdfOptions.path : fileUrl(filename);
+  const url = isLocalFile() ? fileUrl(filename) : pdfOptions.path;
 
   const page = await browser.newPage();
   bar.tick(5);
