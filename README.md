@@ -7,17 +7,17 @@ Using the Headless Chrome Node API [puppeteer](https://github.com/GoogleChrome/p
 `$ npm install -g pdf-cli`
 
 # Usage
-```shell
-# gives a list of html files (from current directory) to quickly pick the ones you want to create PDFs from. 
+```
 $ pdf
 ``` 
+gives a list of html files (from current directory) to quickly pick the ones you want to create PDFs from. 
 
 ![Example pdf](/images/example-pdf.png?raw=true "Example pdf")
 
-```shell
-# Automatically creates PDFs of all html files in the current directory.
+```
 $ pdf --all
 ```
+Automatically creates PDFs of all html files in the current directory.
 
 ![Example pdf --all](/images/example-pdf-all.png?raw=true "Example pdf --all")
 
