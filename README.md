@@ -22,55 +22,55 @@ $ pdf --all
 ![Example pdf --all](/images/example-pdf-all.png?raw=true "Example pdf --all")
 
 # Options
-- `--all`, `-a`
+- **`--all`, `-a`**
 Creates PDFs of all html files in the current directory
 
-- `--overwrite`, `-o`
-Will overwrite any existing PDFs with the same filename. Will not add the timestamp in the filename.
+- **`--overwrite`, `-o`**
+Will overwrite any existing PDFs with the same filename. Will not add the timestamp in the filename. Will not work together with `--url`. 
 
-- `--url=<string>`, `-u=<string>`
+- **`--url=<string>`, `-u=<string>`**
 Create PDF from a URL, works with local paths and web URLs. 
 
 ## PDF options
 Options are passed to [puppeteer](https://github.com/GoogleChrome/puppeteer) and comes from their docs at the time of writing, but please note that the defaults in `pdf-cli` might be different. 
 
-- `--scale=<number>`, `-s=<number>`
+- **`--scale=<number>`, `-s=<number>`**
 Scale of the webpage rendering. Defaults to 1. 
 
-- `--displayHeaderFooter=<boolean>`, `-d=<boolean>`
+- **`--displayHeaderFooter=<boolean>`, `-d=<boolean>`**
 Display header and footer. Defaults to true.
 
-- `--printBackground=<boolean>`, `-b=<boolean>`
+- **`--printBackground=<boolean>`, `-b=<boolean>`**
 Print background graphics. Defaults to true.
 
-- `--landscape=<boolean>`, `-l=<boolean>`
+- **`--landscape=<boolean>`, `-l=<boolean>`**
 Paper orientation. Defaults to false.
 
-- `--pageRanges=<string>`, `-p=<string>`
+- **`--pageRanges=<string>`, `-p=<string>`**
 Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages. Please note that `pdf-cli` will print one page by default. You can change this with the `--format` option.
 
-- `--format=<string>`, `-f=<string>`
+- **`--format=<string>`, `-f=<string>`**
 Paper format. If set, takes priority over width or height options. Defaults to false, which means default width and height will be used. Setting format will override the full-page PDF feature. (See list of format options below)
 
-- `--width=<string>`, `-w=<string>`
+- **`--width=<string>`, `-w=<string>`**
 Paper width, accepts values labeled with units. Defaults to 250mm. 
 
-- `--height=<string>`, `-h=<string>`
+- **`--height=<string>`, `-h=<string>`**
 Paper height, accepts values labeled with units. Setting height will override the full-page PDF feature. 
 
-- `--marginTop=<string>`, `--mt=<string>` (note: 2 dashes)
+- **`--marginTop=<string>`, `--mt=<string>`** (note: 2 dashes)
 Top margin, accepts values labeled with units. Defaults to 6.35mm. 
 
-- `--marginRight=<string>`, `--mr=<string>` (note: 2 dashes)
+- **`--marginRight=<string>`, `--mr=<string>`** (note: 2 dashes)
 Right margin, accepts values labeled with units. Defaults to 6.35mm. 
 
-- `--marginBottom=<string>`, `--mb=<string>` (note: 2 dashes)
+- **`--marginBottom=<string>`, `--mb=<string>`** (note: 2 dashes)
 Bottom margin, accepts values labeled with units. Defaults to 14.11mm. 
 
-- `--marginLeft=<string>`, `--ml=<string>` (note: 2 dashes)
+- **`--marginLeft=<string>`, `--ml=<string>`** (note: 2 dashes)
 Left margin, accepts values labeled with units. Defaults to 6.35mm. 
 
-- `--margins=<string>`, `-m=<string>`
+- **`--margins=<string>`, `-m=<string>`**
 Shorthand margin all sides, accepts values labeled with units. You can combine this with marginTop, marginRight, marginBottom, marginLeft. `$ pdf --margin=1mm --marginLeft=5mm` will generate 5mm margin left, and 1mm margin on the other sides. Order does not matter. 
 
 # Units
