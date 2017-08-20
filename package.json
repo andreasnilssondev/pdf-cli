@@ -1,0 +1,36 @@
+{
+  "name": "pdf-cli",
+  "version": "0.1.0",
+  "description": "CLI to quickly Create PDFs from a URL or local html files",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "bin": {
+    "pdf": "./index.js"
+  },
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "repository": "NaNdreas/pdf-cli",
+  "author": {
+    "name": "Andreas Nilsson",
+    "email": "andreas.nilsson333@gmail.com",
+    "url": "github.com/NaNdreas"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "file-url": "^2.0.2",
+    "inquirer": "^3.2.2",
+    "multi-progress": "^2.0.0",
+    "puppeteer": "^0.9.0",
+    "yargs": "^8.0.2",
+    "yargs-parser": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "react/jsx-filename-extension": ["off"],
+    "linebreak-style": ["off"],
+    "no-console": ["off"]
+  }
+}
