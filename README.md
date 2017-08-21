@@ -1,7 +1,9 @@
 # pdf-cli
-A CLI to quickly create full-page PDFs from a URL or local html files in current directory. 
+A CLI to quickly create full-page PDFs from a URL or local html files in current directory.
 
-Using the Headless Chrome Node API [puppeteer](https://github.com/GoogleChrome/puppeteer) for creating the PDFs. `pdf-cli` will check the height of the document and print the PDF as one page only. If you still wish to generate PDFs with multiple pages, use the `--format` option. 
+Using the Headless Chrome Node API [puppeteer](https://github.com/GoogleChrome/puppeteer) for creating the PDFs. `pdf-cli` will check the height of the document and print the PDF as one page only. If you still wish to generate PDFs with multiple pages, use the `--format` option.
+
+*Requires Node 7.10 or higher*
 
 # Install
 `$ npm install -g pdf-cli`
@@ -9,8 +11,8 @@ Using the Headless Chrome Node API [puppeteer](https://github.com/GoogleChrome/p
 # Usage
 ```
 $ pdf
-``` 
-gives a list of html files (from current directory) to quickly pick the ones you want to create PDFs from. 
+```
+gives a list of html files (from current directory) to quickly pick the ones you want to create PDFs from.
 
 ![Example pdf](/images/example-pdf.png?raw=true "Example pdf")
 
@@ -26,16 +28,16 @@ Automatically creates PDFs of all html files in the current directory.
 Creates PDFs of all html files in the current directory
 
 - **`--overwrite`, `-o`**
-Will overwrite any existing PDFs with the same filename. Will not add the timestamp in the filename. Will not work together with `--url`. 
+Will overwrite any existing PDFs with the same filename. Will not add the timestamp in the filename. Will not work together with `--url`.
 
 - **`--url=<string>`, `-u=<string>`**
-Create PDF from a URL, works with local paths and web URLs. 
+Create PDF from a URL, works with local paths and web URLs.
 
 ## PDF options
-Options are passed to [puppeteer](https://github.com/GoogleChrome/puppeteer) and comes from their docs at the time of writing, but please note that the defaults in `pdf-cli` might be different. 
+Options are passed to [puppeteer](https://github.com/GoogleChrome/puppeteer) and comes from their docs at the time of writing, but please note that the defaults in `pdf-cli` might be different.
 
 - **`--scale=<number>`, `-s=<number>`**
-Scale of the webpage rendering. Defaults to 1. 
+Scale of the webpage rendering. Defaults to 1.
 
 - **`--displayHeaderFooter=<boolean>`, `-d=<boolean>`**
 Display header and footer. Defaults to true.
@@ -53,25 +55,25 @@ Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, whic
 Paper format. If set, takes priority over width or height options. Defaults to false, which means default width and height will be used. Setting format will override the full-page PDF feature. (See list of format options below)
 
 - **`--width=<string>`, `-w=<string>`**
-Paper width, accepts values labeled with units. Defaults to 250mm. 
+Paper width, accepts values labeled with units. Defaults to 250mm.
 
 - **`--height=<string>`, `-h=<string>`**
-Paper height, accepts values labeled with units. Setting height will override the full-page PDF feature. 
+Paper height, accepts values labeled with units. Setting height will override the full-page PDF feature.
 
 - **`--marginTop=<string>`, `--mt=<string>`** (note: 2 dashes)
-Top margin, accepts values labeled with units. Defaults to 6.35mm. 
+Top margin, accepts values labeled with units. Defaults to 6.35mm.
 
 - **`--marginRight=<string>`, `--mr=<string>`** (note: 2 dashes)
-Right margin, accepts values labeled with units. Defaults to 6.35mm. 
+Right margin, accepts values labeled with units. Defaults to 6.35mm.
 
 - **`--marginBottom=<string>`, `--mb=<string>`** (note: 2 dashes)
-Bottom margin, accepts values labeled with units. Defaults to 14.11mm. 
+Bottom margin, accepts values labeled with units. Defaults to 14.11mm.
 
 - **`--marginLeft=<string>`, `--ml=<string>`** (note: 2 dashes)
-Left margin, accepts values labeled with units. Defaults to 6.35mm. 
+Left margin, accepts values labeled with units. Defaults to 6.35mm.
 
 - **`--margins=<string>`, `-m=<string>`**
-Shorthand margin all sides, accepts values labeled with units. You can combine this with marginTop, marginRight, marginBottom, marginLeft. `$ pdf --margin=1mm --marginLeft=5mm` will generate 5mm margin left, and 1mm margin on the other sides. Order does not matter. 
+Shorthand margin all sides, accepts values labeled with units. You can combine this with marginTop, marginRight, marginBottom, marginLeft. `$ pdf --margin=1mm --marginLeft=5mm` will generate 5mm margin left, and 1mm margin on the other sides. Order does not matter.
 
 # Units
 All possible units are:
